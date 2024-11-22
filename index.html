@@ -3,10 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>Void's Dev Zone</title>
+    <style>
+        /* Theme colors */
+        :root {
+            --myTheme: #2b3e50; /* Dark greyish blue */
+            --textColor: #f5f5f5;
+            --accent: #ff5722; /* Vibrant orange for contrast */
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--myTheme);
+            color: var(--textColor);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--accent);
+            color: var(--textColor);
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: var(--textColor);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: var(--accent);
+        }
+
+        footer {
+            background: #1f2b36;
+            color: var(--textColor);
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project {
+            background: #1f2b36;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .project h3 {
+            margin: 10px 0 5px;
+            font-size: 1.5rem;
+        }
+
+        .project p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+
+        .project a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>Welcome to my GitHub Page!</p>
+    <header>
+        <h1>Void's Dev Zone</h1>
+        <p>Your go-to space for Phaser 3 experiments, JS creations, and more!</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hey there! I'm Void, a solo JavaScript game developer and enthusiast. I specialize in creating fun 
+                games using Phaser 3, and I’m passionate about experimenting with new mechanics and ideas.
+                Whether it's medieval runner games, top-down RTS, or clicker tower defense, I love turning ideas into playable reality!
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x150.png?text=Medieval+Runner" alt="Medieval Runner">
+                    <h3>Medieval Runner</h3>
+                    <p>A fast-paced runner game with power-ups, enemies, and dynamic challenges!</p>
+                    <a href="#">View Demo</a>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x150.png?text=Tower+Defense" alt="Tower Defense">
+                    <h3>Clicker Tower Defense</h3>
+                    <p>Defend your base by clicking! Simple yet addictive gameplay mechanics.</p>
+                    <a href="#">Play Now</a>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x150.png?text=Top+Down+RTS" alt="Top Down RTS">
+                    <h3>Top-Down RTS</h3>
+                    <p>A strategic survival game where you control a squad to defend your outpost.</p>
+                    <a href="#">Check it Out</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Want to collaborate or just say hi? Reach out to me!</p>
+            <p>Email: <a href="mailto:void@gamezone.com">void@gamezone.com</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Void's Dev Zone. All rights reserved.</p>
+    </footer>
 </body>
 </html>
