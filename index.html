@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Void's Dev Zone</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
     <style>
         /* Theme colors */
         :root {
-            --myTheme: #2b3e50; /* Dark greyish blue */
-            --textColor: #f5f5f5;
-            --accent: #ff5722; /* Vibrant orange for contrast */
+            --myTheme: #041b30; /* Dark greyish blue */
+            --textColor: #ffffff; /* White */
+            --accent: #5885AF; /* Complementary light blue */
+            --secondary: #213b88; /* Deeper blue */
         }
 
         body {
@@ -17,7 +19,8 @@
             font-family: 'Arial', sans-serif;
             background-color: var(--myTheme);
             color: var(--textColor);
-            line-height: 1.6;
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
         header {
@@ -25,11 +28,19 @@
             color: var(--textColor);
             padding: 20px 10px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            animation: fadeIn 2s ease-in-out;
         }
 
         nav {
@@ -40,32 +51,49 @@
         nav a {
             color: var(--textColor);
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
             font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
         }
 
-        nav a:hover {
-            color: var(--accent);
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            left: 50%;
+            bottom: -5px;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
         }
 
         .content {
             max-width: 800px;
             margin: auto;
             padding: 20px;
+            text-align: center;
         }
 
         .content h2 {
             color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         footer {
-            background: #1f2b36;
+            background: var(--secondary);
             color: var(--textColor);
             text-align: center;
             padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
 
         .projects {
@@ -80,12 +108,25 @@
             padding: 15px;
             border-radius: 8px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
 
         .project img {
             max-width: 100%;
             height: auto;
             border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover img {
+            transform: scale(1.1);
         }
 
         .project h3 {
@@ -101,10 +142,31 @@
         .project a {
             color: var(--accent);
             text-decoration: none;
+            font-weight: bold;
         }
 
         .project a:hover {
             text-decoration: underline;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -112,6 +174,7 @@
     <header>
         <h1>Void's Dev Zone</h1>
         <p>Your go-to space for Phaser 3 experiments, JS creations, and more!</p>
+        <div id="canvas-container"></div>
     </header>
 
     <nav>
@@ -164,5 +227,25 @@
     <footer>
         <p>© 2024 Void's Dev Zone. All rights reserved.</p>
     </footer>
+
+    <script>
+        function setup() {
+            let canvas = createCanvas(windowWidth, 200);
+            canvas.parent("canvas-container");
+            noStroke();
+        }
+
+        function draw() {
+            background("#213b88");
+            for (let i = 0; i < 50; i++) {
+                fill(255, random(50, 150));
+                ellipse(random(width), random(height), random(5, 20));
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, 200);
+        }
+    </script>
 </body>
 </html>
