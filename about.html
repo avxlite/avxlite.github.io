@@ -3,38 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | AVX-Aero</title>
-    <style>
-        body { background-color: #041b30; color: white; font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        .container { max-width: 600px; margin: auto; background: rgba(0, 0, 0, 0.2); padding: 30px; border-radius: 10px; }
-        .ribbon { background: #5885AF; padding: 15px 0; position: sticky; top: 0; z-index: 100; text-align: center; }
-        .ribbon a { color: white; text-decoration: none; margin: 0 15px; font-size: 1.2rem; }
-        .ribbon a:hover { color: #213b88; }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        p { font-size: 1.1rem; line-height: 1.6; }
-        .contact-btn { background: #ffcc00; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold; display: inline-block; text-decoration: none; }
-        .contact-btn:hover { background: #e6b800; }
-    </style>
+    <title>About - AVX-Aero's Dev Zone</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div id="canvas-container"></div>
+        <h1>AVX-Aero's Dev Zone</h1>
+    </header>
 
-    <div class="ribbon">
+    <nav id="navbar">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="mailto:botaero092@gmail.com">Contact</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hey, I'm <b>AVX-Aero</b>, a web developer passionate about <i>front-end development</i> and UI/UX design.
+                I work mostly with <b>JavaScript</b>, specifically using <b>Ember.js</b> to build dynamic web applications.
+            </p>
+            <p>
+                I enjoy experimenting with new technologies, building interactive web apps, and refining my skills in <i>DOM manipulation</i> and client-side logic.
+                My current focus is on <b>LocalStorage-based projects</b>, optimizing web experiences without the need for external databases.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out!</p>
+            <p>Email: <a href="mailto:botaero092@gmail.com">botaero092@gmail.com</a></p>
+        </section>
     </div>
 
-    <div class="container">
-        <h1>About Me</h1>
-        <p>
-            I'm <b>Avxlite</b>, a <i>front-end web developer</i> who enjoys designing functional and modern websites.
-        </p>
-        <p>
-            I love working with <b>HTML, CSS, and JavaScript</b> to build sleek and responsive interfaces.
-            When I'm not coding, I'm probably geeking out over <b>aviation</b> and aircraft technologies.
-        </p>
-        <a href="mailto:botaero092@gmail.com" class="contact-btn">📩 Contact Me</a>
-    </div>
+    <footer>
+        <p>© 2024 AVX-Aero's Dev Zone. All rights reserved.</p>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
