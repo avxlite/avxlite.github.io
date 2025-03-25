@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Avxlite</title>
+    <style>
+        :root {
+            --myTheme: #37474F; /* Dark Greyish Blue */
+            --textColor: #ffffff;
+            --accentColor: #ffcc00; /* Gold for highlights */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--myTheme);
+            color: var(--textColor);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--accentColor);
+            color: #000;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: #e6b800;
+            transform: scale(1.05);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container fade-in">
+        <h1>Hey, I'm Avxlite! 👋</h1>
+        <p>
+            I'm a passionate web developer who loves crafting sleek and functional websites.  
+            I specialize in front-end development with **HTML, CSS, and JavaScript**  
+            to bring creative ideas to life.  
+        </p>
+        <p>
+            I’m always exploring **modern web technologies**, enhancing user experiences,  
+            and optimizing designs for the best performance.  
+        </p>
+        <p>
+            When I'm not coding, you'll find me diving into **aviation topics**,  
+            learning about different aircraft, or just tinkering with new tech.  
+        </p>
+        <a href="mailto:botaero092@gmail.com" class="contact-btn">📩 Contact Me</a>
+    </div>
+
+</body>
+</html>
