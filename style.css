@@ -1,0 +1,102 @@
+:root {
+    --myTheme: #041b30; /* Dark greyish blue */
+    --textColor: #ffffff;
+    --accent: #5885AF;
+    --secondary: #213b88;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--myTheme);
+    color: var(--textColor);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+header {
+    background: var(--accent);
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+header h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+nav {
+    text-align: center;
+    background: var(--secondary);
+    padding: 10px 0;
+    position: relative;
+    transition: all 0.3s;
+}
+
+nav a {
+    color: var(--textColor);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    left: 50%;
+    bottom: -5px;
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Sticky navbar when scrolled past */
+#navbar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Styling */
+.content {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.content h2 {
+    color: var(--accent);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+footer {
+    background: var(--secondary);
+    text-align: center;
+    padding: 10px 0;
+}
